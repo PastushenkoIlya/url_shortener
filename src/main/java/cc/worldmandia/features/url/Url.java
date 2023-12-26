@@ -41,8 +41,8 @@ public class Url {
     @Column(name = "click_count")
     private int clickCount;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_user", referencedColumnName = "id_user")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_user")
     private User user;
 
 }

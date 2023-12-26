@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -29,8 +30,8 @@ public class User {
     @Column(name = "token")
     private String token;
 
-    @OneToMany(mappedBy = "user")
-    private List<Url> urls;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Url> urls = new ArrayList<>();
 
 }
 
