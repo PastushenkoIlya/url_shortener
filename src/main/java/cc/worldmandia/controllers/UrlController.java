@@ -11,7 +11,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/api/v1/url-shortener")
+@RequestMapping("/url-shortener")
 public class UrlController {
     private final URLServiceImpl urlService;
     private final String redirectToList = "redirect:/api/v1/url-shortener/list";
